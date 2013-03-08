@@ -1,0 +1,14 @@
+﻿@model IEnumerable<EmployeeManager.Domain.Department>
+
+@{
+    ViewBag.Title = "All Departments";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<ul>
+    @foreach (var department in Model)
+    {
+        <li>@Html.ActionLink(department.Name, "detail", "department", new {department.Id}, null)</li>
+    }
+</ul>
